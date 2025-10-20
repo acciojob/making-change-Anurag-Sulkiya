@@ -1,4 +1,4 @@
-function makeChange(c)
+function makeChange(amount)
 {
 	const result = {
 		q:0,
@@ -7,19 +7,19 @@ function makeChange(c)
 		p:0
 	}
 
-	result.q = Math.floor(c/25);
-	c = c%25;
+	result.q = Math.floor(amount/25);
+	amount = amount%25;
 
-	result.d = Math.floor(c/10);
-	c = c%10;
+	result.d = Math.floor(amount/10);
+	amount = amount%10;
 
-	result.n = Math.floor(c/5);
-	c = c%5;
+	result.n = Math.floor(amount/5);
+	amount = amount%5;
 
-	result.p = c;
+	result.p = amount;
 
 	return result;
 }
-Do not the change the code below
+//Do not the change the code below
 const c = prompt("Enter c: ");
 alert(JSON.stringify(makeChange(c)));
